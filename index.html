@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme_light colors_on threed_css" id="body">
+    <div id="container">
+        <!-- Header -->
+        <header id="header">
+            <h1>Tic Tac Toe</h1>
+
+            <p>Not rendering correctly? <span class="link_button" onclick="cssMode('off')">Disable 3D CSS</span></p>
+            
+            <!-- <button id="theme_button" onclick="changeTheme()">Theme</button>
+            <button id="color_mode" onclick="colorMode()">Color Mode</button>
+            <button id="animations_toggle" onclick="animationMode()">
+                Animations
+                <span class="animations_on_only float_right">On</span>
+                <span class="animations_off_only float_right">Off</span>
+            </button>
+            <button id="threed_css_toggle" onclick="cssMode()">
+                3D CSS
+                <span class="threed_css_on_only float_right">On</span>
+                <span class="threed_css_off_only float_right">Off</span>
+            </button> -->
+        </header>
+
+        <!-- Turn indicator -->
+        <div class="info_bar">
+            <span id="info">It's <b class="x_color">X</b>'s turn</span>
+            <button id="settings_button" onclick="settingsPanel()">
+                <img src="settings.svg" alt="Settings">
+            </button>
+        </div>
+
+        
+        
+
+        <!-- GAME AREA -->
+        <div id="threed_container" class="threed_container">
+            <!-- Settings -->
+            <div id="settings">
+                <header id="settings_header">
+                    <h2>Options</h2>
+                    <span id="settings_close" onclick="settingsPanel()">x</span>
+                </header>
+
+                <div class="settings_inner_container">
+                    <!-- Theme button -->
+                    <button id="theme_button" class="settings_item" onclick="changeTheme()">
+                        Theme
+                        <span class="light_only float_right">Light</span>
+                        <span class="dark_only float_right">Dark</span>
+                    </button>
+                    <!-- Color mode button -->
+                    <button id="color_mode" class="settings_item overflow_hidden" onclick="colorMode()">
+                        Color Mode 
+                        <span class="color_preview">
+                            <b class="x_color">X</b><b class="o_color">O</b>
+                        </span>
+                        <span class="colors_on_only float_right">On</span>
+                        <span class="colors_off_only float_right">Off</span>
+                    </button>
+                    <!-- Disable animations -->
+                    <button id="animations_toggle" class="settings_item" onclick="animationMode()">
+                        Animations
+                        <span class="animations_on_only float_right">On</span>
+                        <span class="animations_off_only float_right">Off</span>
+                    </button>
+                    <!-- Disable 3D CSS -->
+                    <button id="threed_css_toggle" class="settings_item overflow_hidden" onclick="cssMode()">
+                        3D CSS
+                        <span class="threed_preview">
+                            <!-- Preview Square -->
+                            <div class="preview_square">
+                                <div class="ps_row">
+                                    <div class="ps_item"></div>
+                                    <div class="ps_item"></div>
+                                    <div class="ps_item"></div>
+                                </div>
+                                <div class="ps_row">
+                                    <div class="ps_item"></div>
+                                    <div class="ps_item"></div>
+                                    <div class="ps_item"></div>
+                                </div>
+                                <div class="ps_row">
+                                    <div class="ps_item"></div>
+                                    <div class="ps_item"></div>
+                                    <div class="ps_item"></div>
+                                </div>
+                            </div>
+                        </span>
+                        <span class="threed_css_on_only float_right">On</span>
+                        <span class="threed_css_off_only float_right">Off</span>
+                    </button>
+                </div>
+
+                <div id="notice">
+                    Made by person: <a href="https://github.com/not-the">https://github.com/not-the</a>
+                </div>
+            </div>
+
+            <!-- Win overlay -->
+            <div id="game_overlay">
+                <p>
+                    <span id="inner_info">You win</span><br>
+                    <button id="play_again" class="transition_off" onclick="resetGame()">
+                        Play Again
+                    </button>
+                </p>
+            </div>
+
+            <!-- Game Board -->
+            <div id="game_board" class="clickable">
+                <div class="row">
+                    <div class="game_space" id="1_1" onclick="gameClick(`1_1`)"></div>
+                    <div class="game_space" id="2_1" onclick="gameClick(`2_1`)"></div>
+                    <div class="game_space" id="3_1" onclick="gameClick(`3_1`)"></div>
+                </div>
+                <div class="row">
+                    <div class="game_space" id="1_2" onclick="gameClick(`1_2`)"></div>
+                    <div class="game_space" id="2_2" onclick="gameClick(`2_2`)"></div>
+                    <div class="game_space" id="3_2" onclick="gameClick(`3_2`)"></div>
+                </div>
+                <div class="row">
+                    <div class="game_space" id="1_3" onclick="gameClick(`1_3`)"></div>
+                    <div class="game_space" id="2_3" onclick="gameClick(`2_3`)"></div>
+                    <div class="game_space" id="3_3" onclick="gameClick(`3_3`)"></div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END GAME AREA -->
+
+    </div>
+    
+
+    <!-- JAVASCRIPT -->
+    <script src="index.js"></script>
+</body>
+</html>
