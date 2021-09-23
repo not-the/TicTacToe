@@ -63,7 +63,7 @@ a:hover {
     height: 32px;
     width: 32px;
 }
-.animations_on .x_color, .animations_on .o_color {transition: 0.25s;}
+.animations_on .x_color, .animations_on .o_color {transition: color 0.25s;}
 .colors_on .x_color {color: rgb(168, 0, 0);}
 .colors_on .o_color {color: rgb(0, 98, 190);}
 .clickable {
@@ -267,7 +267,8 @@ h2 {
     font-size: 16pt;
 }
 .animations_on #settings_close {
-    transition: 0.2s;
+    transition-property: transform, color;
+    transition-duration: 0.2s;
 }
 #notice {
     text-align: center;
@@ -321,7 +322,8 @@ button {
     cursor: pointer;
 }
 .animations_on button {
-    transition: 0.1s;
+    transition-property: transform, background-color, box-shadow, border;
+    transition-duration: 0.1s;
 }
 button:hover, #settings_button:hover {
     transform: translateY(-2px);
@@ -450,7 +452,7 @@ button:active {
     width: 20px;
     background: black;
 }
-.animations_on .preview_square {transition: 0.2s linear;}
+.animations_on .preview_square {transition: transform 0.2s linear;}
 .threed_css .preview_square {
     transform: perspective(50px) rotateX(30deg) translateY(-2px);
 }
